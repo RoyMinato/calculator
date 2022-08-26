@@ -1,1 +1,3 @@
-# calculator
+# Calculator
+
+A basic calculator app.
