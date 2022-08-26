@@ -38,3 +38,47 @@ function operate(a, operation, b) {
             break;
     }
 }
+
+
+const display = document.querySelector('.display');
+
+const nums = document.querySelectorAll('.num');
+const opers = document.querySelectorAll('.oper');
+
+const del = document.querySelector('.del');
+const clear = document.querySelector('.clear');
+
+var currExpression;
+var numPlaceholder = '';
+var currOper;
+
+nums.forEach (num => {
+    num.addEventListener('click', function() {
+        if (display.textContent === '0') {
+            display.textContent = '';
+            display.textContent += num.textContent;
+            currExpression = display.textContent;
+        } else {
+            display.textContent += num.textContent;
+            currExpression = display.textContent;
+        }
+        currOper.style.backgroundColor = '#b0e65f';
+    })
+});
+
+opers.forEach (oper => {
+    oper.addEventListener('click', function() {
+
+    })
+});
+
+del.addEventListener('click', function() {
+    display.textContent = expression.slice(0, -1);
+    currExpression = display.textContent;
+});
+
+clear.addEventListener('click', function() {
+    display.textContent = '0';
+    currExpression = display.textContent;
+    numPlaceholder = '';
+});
